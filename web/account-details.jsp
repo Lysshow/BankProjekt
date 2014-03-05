@@ -12,11 +12,14 @@
         <link type="text/css" rel="stylesheet" href="default.css"/>
     </head>
     <body>
-        <h1>Account Details</h1>
+        <svg width="150" height="100">
+  <polygon points="50,5 20,90 95,30 5,30 80,90"
+  style="fill:blue;stroke:black;stroke-width:5;fill-rule:evenodd;" /></svg>
+  <div id="topbar"> <h1>Account Details</h1></div>
         <hr/>
-        <div class="text"> ${message} for  ${history.number}<br>
+       <div id="indhold"> ${message} for  ${history.number}<br>
             Interest: <fmt:formatNumber value="${history.interest}" maxFractionDigits="3"/><br>
-            Type: ${history.type}<br></div><br>
+            Type: ${history.type}<br><br>
         <table>
             <tr class="row2">
                 <th colspan="3">Transfer Summeries: </th>
@@ -45,14 +48,23 @@
     </table><br>  
 
     <hr>
-    <br><br>
-
-    <a href="Controller?command=list-accounts&cpr=${cpr}">List accounts</a><br>
-    <a href="Controller?command=back">Back to main page</a>
+    <br><br></div>
 
 
+ <div id="menubar">   
+            <p class="midt">
+                <a class="mlink" href="Controller?command=list-accounts&cpr=${cpr}">List accounts</a>
+                <a class="mlink" href="Controller?command=back">Back to main page</a>
+                <a class="mlink" href="Controller?command=back">Back to main page</a>
+                <a class="mlink" href="Controller?command=back">Back to main page</a>
+                <a class="mlink" href="Controller?command=back">Back to main page</a>
+                <a class="mlink" href="Controller?command=back">Back to main page</a>
+                <a class="mlink" href="Controller?command=back">Back to main page</a>
+                
+            </p></div>
 
-
+<hr/> 
+        <div id="footer">Copyright © NAHL GROUP</div>
 
 </body>
 </html>

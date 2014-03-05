@@ -8,11 +8,14 @@
         <link type="text/css" rel="stylesheet" href="default.css"/>
     </head>
     <body>
-        <h1>Account list</h1>
+         <svg width="150" height="100">
+  <polygon points="50,5 20,90 95,30 5,30 80,90"
+  style="fill:blue;stroke:black;stroke-width:5;fill-rule:evenodd;" /></svg>
+        <div id="topbar"><h1>Account list</h1></div>
         <hr/>
-        <div class="text">  ${message} for CPR: ${customer.cpr}<br>
+        <div id="indhold">  ${message} for CPR: ${customer.cpr}<br>
         No. of accounts: ${accounts.size()}<br><br>
-        </div>
+        
 
         <c:forEach var="account" items="${accounts}">
             <br/>
@@ -48,8 +51,15 @@
         </tr>
     </table><br>
 </c:forEach>
+    </div>
+    
+        <div id="menubar">   
+            <p class="midt">
+                <a class="mlink" href="Controller?command=back">Main page</a>
+                <a class="mlink" href="Controller?command=list-customers">Customer list</a>
+                
+            </p></div>
 <hr/> 
-<!-- a href="Back">Back to main page</a -->
-<ul><li><a href="Controller?command=back">Back to main page</a></li>
-    <li><a href="Controller?command=list-customers">Back to customer list</a></li></ul>
+        <div id="footer">Copyright © NAHL GROUP</div>
+
 </html>
