@@ -40,7 +40,7 @@ public class TransferCommand extends TargetCommand{
         } catch (InsufficientFundsException ex) {
             Logger.getLogger(TransferCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
+            request.setAttribute("cpr", request.getParameter("cpr"));
         return super.execute(request);
     }
     

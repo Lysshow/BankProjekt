@@ -31,6 +31,7 @@ public class ListDetailsAccountsCommand extends TargetCommand {
 
         AccountDetail history = manager.showAccountHistory(ai);
 
+        request.setAttribute("cpr", request.getParameter("cpr"));
         request.setAttribute("history", history);
 
         request.setAttribute("message", "These are the details of the account: ");

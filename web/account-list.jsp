@@ -10,15 +10,15 @@
     <body>
         <h1>Account list</h1>
         <hr/>
-        ${message} for CPR: ${customer.cpr}<br>
+        <div class="text">  ${message} for CPR: ${customer.cpr}<br>
         No. of accounts: ${accounts.size()}<br><br>
-
+        </div>
 
         <c:forEach var="account" items="${accounts}">
             <br/>
 
-            <table  border="1" style="width:500px" border color="black" bgcolor="cornflowerblue">
-                <tr style bgcolor="lightblue" font color="white">
+            <table>
+                <tr class="row">
                     <th>Account No:</th>
                     <th>Account Type:</th>
                     <th>Account Balance:</th>
@@ -38,13 +38,18 @@
                             <input type="submit" name="listdetails" id="listdetailsButton" value="Account Details" />
                         </form>
                     </td>
-
-                    <td><a href="Controller?command=transfer"</a>Transfer money from this account</td>
-                </tr>
-            </table><br>
-        </c:forEach>
-        <hr/> 
-        <!-- a href="Back">Back to main page</a -->
-        <ul><li><a href="Controller?command=back">Back to main page</a></li>
-            <li><a href="Controller?command=list-customers">Back to customer list</a></li></ul>
+                <td>  <form action="Controller?command=transfer"
+                      method="post">
+                    <input type="hidden" name="cpr" id="cpr" value="${customer.cpr}" />
+                    <input type="submit" name="transfer" id="transferButton" value="Transfer money" />
+                </form>
+            </td>
+            
+        </tr>
+    </table><br>
+</c:forEach>
+<hr/> 
+<!-- a href="Back">Back to main page</a -->
+<ul><li><a href="Controller?command=back">Back to main page</a></li>
+    <li><a href="Controller?command=list-customers">Back to customer list</a></li></ul>
 </html>

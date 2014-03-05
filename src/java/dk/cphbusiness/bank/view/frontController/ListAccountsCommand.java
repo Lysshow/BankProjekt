@@ -17,8 +17,10 @@ public class ListAccountsCommand extends TargetCommand {
   public String execute(HttpServletRequest request) {
     BankManager manager = Factory.getInstance().getManager();
 
+   
     CustomerIdentifier customer = CustomerIdentifier.fromString(request.getParameter("cpr"));
     Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
+
 
     request.setAttribute("accounts", accounts);
     request.setAttribute("message", "This is a list of accounts");

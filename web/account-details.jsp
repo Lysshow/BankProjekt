@@ -13,43 +13,45 @@
     </head>
     <body>
         <h1>Account Details</h1>
-        ${message} for  ${history.number}<br>
-        Interest: <fmt:formatNumber value="${history.interest}" maxFractionDigits="3"/><br>
-        Type: ${history.type}<br>
-        <table  border="1" style="width:1000px" border color="black" bgcolor="cornflowerblue">
-            <tr style bgcolor="lightblue" font color="white">
+        <hr/>
+        <div class="text"> ${message} for  ${history.number}<br>
+            Interest: <fmt:formatNumber value="${history.interest}" maxFractionDigits="3"/><br>
+            Type: ${history.type}<br></div><br>
+        <table>
+            <tr class="row2">
                 <th colspan="3">Transfer Summeries: </th>
-                </tr>
+            </tr>
 
-
+            <tr>
+                <th class="transfersummaries">Amount: </th>
+                <th class="transfersummaries">Date: </th>
+                <th class="transfersummaries">Target Account No: </th>   
+            </tr>
 
 
             <c:forEach var="transfer" items="${history.transfers}"> 
-                <tr>
-                    <th>Amount: </th>
-                    <th>Date: </th>
-                    <th>Target Accountno: </th>   
-                </tr>
+
 
                 <tr>      
-                    <td align="center" style="width:20%">${transfer.amount}</td>
-                    <td align="center">${transfer.date}</td>
-                <td align="center">${transfer.accountNumber}</td>
+                    <td>${transfer.amount}</td>
+                    <td><fmt:formatDate value="${transfer.date}"/></td>
+                    <td>${transfer.accountNumber}</td>
 
                 </tr>
             </c:forEach>
-                
+
         </tr>
 
     </table><br>  
-    <hr/>
 
+    <hr>
     <br><br>
-    <a href="Controller?command=list-accounts">List accounts</a><br>
+
+    <a href="Controller?command=list-accounts&cpr=${cpr}">List accounts</a><br>
     <a href="Controller?command=back">Back to main page</a>
 
 
-    <hr>
+
 
 
 </body>

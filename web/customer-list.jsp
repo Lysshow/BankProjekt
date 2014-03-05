@@ -10,14 +10,14 @@
   <body>
     <h1>Customer list</h1>
     <hr/>
-    ${message} ${customers.size()}<br><br>
-    
+    <div class="text"> ${message} ${customers.size()}<br><br>
+    </div>
     
       
     <c:forEach var="customer" items="${customers}">
   
-    <table  border="1" style="width:1000px" border color="black" bgcolor="cornflowerblue">
-          <tr style bgcolor="lightblue" font color="white">
+    <table>
+          <tr class="row">
               <th>CPR number:</th>
               <th>Customer Name</th>
               <th>Address: </th>
@@ -33,7 +33,12 @@
               <td style="width:20%"> ${customer.phone}</td>
               <td style="width:20%"> ${customer.email}</td>
               
-              <td><a href="Controller?command=list-accounts&cpr=${customer.cpr}">List accounts</a> </td>
+              <td><form action="Controller?command=list-accounts&cpr=${customer.cpr}"
+                        method="post">
+                  <input type="submit" name="listaccounts" id="listaccounts" value="List Accounts" />
+                  </form>
+                  
+                   </td>
       
       
           </tr>
