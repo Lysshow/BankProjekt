@@ -1,4 +1,4 @@
-package dk.cphbusiness.bank.view.frontController;
+package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountDetail;
@@ -6,12 +6,14 @@ import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
 import dk.cphbusiness.bank.contract.eto.InsufficientFundsException;
 import dk.cphbusiness.bank.contract.eto.NoSuchAccountException;
 import dk.cphbusiness.bank.contract.eto.TransferNotAcceptedException;
-import dk.cphbusiness.bank.view.Factory;
+import servlets.Factory;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+import security.SecurityRole;
 
 /**
  *
@@ -19,8 +21,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class TransferCommand extends TargetCommand{
 
-    public TransferCommand(String target) {
-        super(target);
+    public TransferCommand(String target, List<SecurityRole> roles) {
+        super(target, roles);
     }
 
     @Override

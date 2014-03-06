@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dk.cphbusiness.bank.view.frontController;
+package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountDetail;
 import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
-import dk.cphbusiness.bank.view.Factory;
+import java.util.List;
+import servlets.Factory;
 import javax.servlet.http.HttpServletRequest;
+import security.SecurityRole;
 
 /**
  *
@@ -17,8 +19,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class ListDetailsAccountsCommand extends TargetCommand {
 
-    public ListDetailsAccountsCommand(String target) {
-        super(target);
+    public ListDetailsAccountsCommand(String target, List<SecurityRole> roles) {
+        super(target, roles);
     }
     String amount, date, accountno;
     String[] parts;

@@ -1,4 +1,4 @@
-package dk.cphbusiness.bank.view.frontController;
+package commands;
 
 import javax.servlet.http.HttpServletRequest;
 

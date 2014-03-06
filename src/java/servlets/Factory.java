@@ -1,10 +1,12 @@
-package dk.cphbusiness.bank.view;
+package servlets;
 
+import commands.Command;
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.dummy.bank.control.DummyBankManager;
+import javax.servlet.http.HttpServletRequest;
 
 public class Factory {
-  private static Factory instance = null;
+  private static final Factory instance = new Factory();
   private final BankManager manager;
   
   private Factory() {
@@ -12,10 +14,14 @@ public class Factory {
     }
   
   public static Factory getInstance() {
-    if (instance == null) instance = new Factory();
     return instance;
     }
 
+  public Command getCommand(String cmdStr, HttpServletRequest request) {
+      FrontController front = new FrontController();
+      return front.getCommand(cmdStr, request);
+  }
+  
   public BankManager getManager() {
     return manager;
     }
