@@ -8,57 +8,49 @@
         <link type="text/css" rel="stylesheet" href="default.css"/>
     </head>
     <body>
-       <svg width="150" height="100">
-  <polygon points="50,5 20,90 95,30 5,30 80,90"
-  style="fill:#483d8b;stroke:black;stroke-width:5;fill-rule:evenodd;" /></svg>
-  <div id="topbar"> <h1>Customer list</h1></div>
-        
-        
-
-<div id="indhold">
-    ${message} ${customers.size()}<br><br>
-        <c:forEach var="customer" items="${customers}">
-
-            <table>
-                <tr class="row">
-                    <th>CPR number:</th>
-                    <th>Customer Name</th>
-                    <th>Address: </th>
-                    <th>PhoneNo: </th>
-                    <th>Email: </th>
-
-                    <th>Accounts:</th>
-                </tr>
-                <tr>
-                    <td style="width:20%"> ${customer.cpr}</td>
-                    <td style="width:20%"> ${customer.name}</td>
-                    <td style="width:20%"> ${customer.address}</td>
-                    <td style="width:20%"> ${customer.phone}</td>
-                    <td style="width:20%"> ${customer.email}</td>
-
-                    <td><form action="Controller?command=list-accounts&cpr=${customer.cpr}"
-                              method="post">
-                            <input type="submit" name="listaccounts" id="listaccounts" value="List Accounts" />
-                        </form>
-
-                    </td>
+        <div id="topbar"></div>
 
 
-                </tr>
-            </table>
+        <div id="indhold">
+            ${message} ${customers.size()}<br><br>
+            <c:forEach var="customer" items="${customers}">
+
+                <table>
+                    <tr class="row">
+                        <th>CPR number:</th>
+                        <th>Customer Name</th>
+                        <th>Address: </th>
+                        <th>PhoneNo: </th>
+                        <th>Email: </th>
+
+                        <th>Accounts:</th>
+                    </tr>
+                    <tr>
+                        <td style="width:20%"> ${customer.cpr}</td>
+                        <td style="width:20%"> ${customer.name}</td>
+                        <td style="width:20%"> ${customer.address}</td>
+                        <td style="width:20%"> ${customer.phone}</td>
+                        <td style="width:20%"> ${customer.email}</td>
+
+                        <td><form action="Controller?command=list-accounts&cpr=${customer.cpr}"
+                                  method="post">
+                                <input type="submit" name="listaccounts" id="listaccounts" value="List Accounts" />
+                            </form>
+
+                        </td>
 
 
-        </c:forEach></div>
+                    </tr>
+                </table>
 
-        
+
+            </c:forEach></div>
+
+
 
         <div id="menubar">   
-            <p class="midt">
-                <a class="mlink" href="Controller?command=back">Back to main page</a>
-                
-            </p></div>
-
-<hr/> 
+            <a class="mlink" href="Controller?command=back">Back to main page</a>
+        </div><hr/>
         <div id="footer">Copyright © NAHL GROUP</div>
-
+    </body>
 </html>
