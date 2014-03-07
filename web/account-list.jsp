@@ -10,7 +10,7 @@
     <body>
          <svg width="150" height="100">
   <polygon points="50,5 20,90 95,30 5,30 80,90"
-  style="fill:blue;stroke:black;stroke-width:5;fill-rule:evenodd;" /></svg>
+  style="fill:#483d8b;stroke:black;stroke-width:5;fill-rule:evenodd;" /></svg>
         <div id="topbar"><h1>Account list</h1></div>
         <hr/>
         <div id="indhold">  ${message} for CPR: ${customer.cpr}<br>
