@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Transfer Form</title>
         <link type="text/css" rel="stylesheet" href="default.css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--Style for a traditional Browser -->
@@ -35,6 +35,24 @@
                 </style>-->
     </head>
     <body>
+        <div id="topbar">
+            <div id="login">
+                <c:choose >
+                    <c:when test="${pageContext.request.remoteUser== null}">
+                        <a href="Redirect?command=showlogin">Login</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="Redirect?command=logout">Log out</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </div>
+
+        <div id="indhold"></div>
+
+        <div id="menubar">   
+            <a class="mlink" href="Controller?command=back">Back to main page</a>
+        </div>
         <div class="container" >
             <!--<form action="RequestParameters">-->
             <form action="Controller">
@@ -46,7 +64,7 @@
                             <c:forEach var="account" items="${summary}">
                                 <option name="fromAccount"value=${account.number} selected="selected">${account.number}</option>
                             </c:forEach>
-                            
+
                         </select>
                     </div>
                     <div>
@@ -55,7 +73,7 @@
                             <c:forEach var="account" items="${summary}">
                                 <option name="toAccount"value=${account.number} selected="selected">${account.number}</option>
                             </c:forEach>
-                            
+
                         </select>
                     </div>
                     <div>
@@ -67,15 +85,18 @@
                     <div>
                         <label for='date' class='ndLabel' >Date</label> <input name="date" id='date' type="text">
                     </div>
-                <div>
-                    <button type="submit" name="command" value="transferMoney" >Transfer</button>
-                    <!--<input type="submit" name="btnok" value="Transfer">-->
-                    
-                    <input type="reset" value="Clear">
-                </div>
+                    <div>
+                        <button type="submit" name="command" value="transferMoney" >Transfer</button>
+                        <!--<input type="submit" name="btnok" value="Transfer">-->
+
+                        <input type="reset" value="Clear">
+                    </div>
                 </fieldset>
             </form>
         </div>
+
+        <hr/>
+        <div id="footer">Copyright © NAHL GROUP</div>
     </body>
 </html>
 

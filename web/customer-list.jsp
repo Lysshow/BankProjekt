@@ -8,12 +8,23 @@
         <link type="text/css" rel="stylesheet" href="default.css"/>
     </head>
     <body>
-        <div id="topbar"></div>
-
+        <div id="topbar">
+            <div id="login">
+                <c:choose >
+                    <c:when test="${pageContext.request.remoteUser== null}">
+                        <a href="Redirect?command=showlogin">Login</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="Redirect?command=logout">Log out</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </div>
 
         <div id="indhold">
+        <p>
             ${message} ${customers.size()}<br><br>
-            <c:forEach var="customer" items="${customers}">
+            <c:forEach var="customer" items="${customers}"></p>
 
                 <table>
                     <tr class="row">
@@ -22,15 +33,14 @@
                         <th>Address: </th>
                         <th>PhoneNo: </th>
                         <th>Email: </th>
-
                         <th>Accounts:</th>
                     </tr>
                     <tr>
-                        <td style="width:20%"> ${customer.cpr}</td>
-                        <td style="width:20%"> ${customer.name}</td>
-                        <td style="width:20%"> ${customer.address}</td>
-                        <td style="width:20%"> ${customer.phone}</td>
-                        <td style="width:20%"> ${customer.email}</td>
+                        <td> ${customer.cpr}</td>
+                        <td> ${customer.name}</td>
+                        <td> ${customer.address}</td>
+                        <td> ${customer.phone}</td>
+                        <td> ${customer.email}</td>
 
                         <td><form action="Controller?command=list-accounts&cpr=${customer.cpr}"
                                   method="post">
@@ -41,16 +51,18 @@
 
 
                     </tr>
-                </table>
+              
 
 
-            </c:forEach></div>
-
-
-
+            </c:forEach>
+        
+          </table>
+        </div>
+        
         <div id="menubar">   
             <a class="mlink" href="Controller?command=back">Back to main page</a>
-        </div><hr/>
+        </div>
+            <hr/>
         <div id="footer">Copyright © NAHL GROUP</div>
     </body>
 </html>
