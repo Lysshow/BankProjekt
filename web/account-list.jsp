@@ -46,6 +46,7 @@
                     <input type="hidden" name="cpr" id="cpr" value="${customer.cpr}" />
                     <input type="submit" name="transfer" id="transferButton" value="Transfer money" />
                 </form>
+
             </td>
             
         </tr>
@@ -57,6 +58,7 @@
             <p class="midt">
                 <a class="mlink" href="Controller?command=back">Main page</a>
                 <a class="mlink" href="Controller?command=list-customers">Customer list</a>
+                <a class="mlink" href="Controller?command=add-account">Add account</a>
                 
             </p></div>
 <hr/> 

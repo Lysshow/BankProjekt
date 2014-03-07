@@ -1,7 +1,6 @@
 package commands;
 
 import dk.cphbusiness.bank.contract.dto.CustomerDetail;
-import dk.cphbusiness.dummy.bank.model.Person;
 import javax.servlet.http.HttpServletRequest;
 import servlets.Factory;
 import java.util.List;
