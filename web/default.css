@@ -10,13 +10,13 @@ h1{
 }
 .text{
     font-size: 120%;
-    
+
 }
 
 table{
     text-align: center;
     border-collapse:collapse;
-    
+
     border-color: black;
     background: white;
     border: 1px solid black;
@@ -24,77 +24,79 @@ table{
 }
 
 .row{
-    
+
     background-color:#483d8b;
     color: white;
     border:1px solid black;
 }
 .row2{
-     width: 50%;
-     background-color:#483d8b;
+    width: 50%;
+    background-color:#483d8b;
     color: white;
     border:1px solid black;
 }
 
 td, th {
-  border-left: solid 1px black;
-  border-bottom:  solid 1px black;
-  
+    border-left: solid 1px black;
+    border-bottom:  solid 1px black;
+
 }
 .transfersummaries{
     background: lightblue;
-   
+
 }
 
 #menubar{
-position: absolute;
-top: 120px;
-left: 5px;
-width: 140px;
-color: black;
-background: #483d8b;
-border: 2px solid black;
+    position: absolute;
+    top: 198px;
+    left: 5px;
+    width: 140px;
+    color: black;
+    background: #483d8b;
+    border: 2px solid black;
 
 }
 
 a.mlink:link,a.mlink:visited,a.mlink:active{
-font-family:verdana,arial,sans-serif;
-color:white;
-display:block;
-width: 120px;
-text-decoration: none;
-font-size:12px;
-padding:3px;
-background:url(usynlig.gif);
-font-weight:normal;
-margin-left: 10px;
+    font-family:verdana,arial,sans-serif;
+    color:white;
+    display:block;
+    width: 120px;
+    text-decoration: none;
+    font-size:12px;
+    padding:3px;
+    background:url(usynlig.gif);
+    font-weight:normal;
+    margin-left: 10px;
 
 }
 
 a.mlink:hover {
-background:lightblue;
-color:white;
+    background:lightblue;
+    color:white;
 }
 
 #topbar{
-position: absolute;
-top: 25px;
-left: 120px;
-color: black;
-
-}
-
-#indhold{
-padding-top:20px;
-padding-left:150px;
-padding-right:20px;
-
-}
-#footer{
-width:100%;
-}
-
-.indhold{
-    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url("images/GNB.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 198px;
+    
     
 }
+
+
+#indhold{
+    padding-top:180px;
+    padding-left:150px;
+    padding-right:20px;
+    font-size: 14px;
+    width:100%;
+}
+#footer{
+    width:100%;
+}
+

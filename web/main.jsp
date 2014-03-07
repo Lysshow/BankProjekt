@@ -10,10 +10,9 @@
     <body>
 
 
-        <svg width="150" height="100">
-        <polygon points="50,5 20,90 95,30 5,30 80,90"
-                 style="fill:blue;stroke:black;stroke-width:5;fill-rule:evenodd;" /></svg>
-        <div id="topbar"><h1>Goliath National Bank ${message}</h1></div>
+       
+        <div id="topbar"><div>
+        
 
 
         <div id="indhold">
@@ -28,25 +27,29 @@
         </div>
 
 
-        <div id="menubar">   
-            <p class="midt">
-                <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-                    <a class="mlink" href="Controller?command=list-customers">Customer List</a>
-                </c:if >
-                <c:if test="${pageContext.request.isUserInRole('Employee')==true || pageContext.request.isUserInRole('SuperEmployee')==true}">
-                    <a class="mlink" href="Controller?command=list-customers">Employee List</a>
-                </c:if>
-                <c:choose >
-                    <c:when test="${pageContext.request.remoteUser== null}">
-                    <li><a href="Redirect?command=showlogin">Login</a>
-                    </c:when>
-                    <c:otherwise>
-                    <li><a href="Redirect?command=logout">Log out</a></li>
-                    </c:otherwise>
-                </c:choose>
-            <a class="mlink" href="ny_kategori/index.htm">Til anden kategori</a>
-            <a class="mlink" href="http://www.server.dk/fremmed.htm">Til en andens side</a>
-        </p>
+
+
+
+        <c:choose >
+            <c:when test="${pageContext.request.remoteUser== null}">
+                <a href="Redirect?command=showlogin">Login</a>
+            </c:when>
+            <c:otherwise>
+                <a href="Redirect?command=logout">Log out</a></li>
+            </c:otherwise>
+        </c:choose>
+    
+    
+    <div id="menubar">
+        <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
+            <a class="mlink" href="Controller?command=list-customers">Customer List</a>
+        </c:if >
+        <c:if test="${pageContext.request.isUserInRole('Employee')==true || pageContext.request.isUserInRole('SuperEmployee')==true}">
+            <a class="mlink" href="Controller?command=list-customers">Employee List</a>
+        </c:if>
+        <a class="mlink" href="ny_kategori/index.htm">Til anden kategori</a>
+        <a class="mlink" href="http://www.server.dk/fremmed.htm">Til en andens side</a>
+
 
     </div><hr/>
     <div id="footer">Copyright © NAHL GROUP</div>
