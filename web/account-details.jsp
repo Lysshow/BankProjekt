@@ -55,11 +55,6 @@
             <p class="midt">
                 <a class="mlink" href="Controller?command=list-accounts&cpr=${cpr}">List accounts</a>
                 <a class="mlink" href="Controller?command=back">Back to main page</a>
-                <a class="mlink" href="Controller?command=back">Back to main page</a>
-                <a class="mlink" href="Controller?command=back">Back to main page</a>
-                <a class="mlink" href="Controller?command=back">Back to main page</a>
-                <a class="mlink" href="Controller?command=back">Back to main page</a>
-                <a class="mlink" href="Controller?command=back">Back to main page</a>
                 
             </p></div>
 

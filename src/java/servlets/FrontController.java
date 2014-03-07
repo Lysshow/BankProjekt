@@ -1,5 +1,6 @@
 package servlets;
 
+import commands.AddCustomerCommand;
 import commands.Command;
 import commands.ListAccountsCommand;
 import commands.ListCustomersCommand;
@@ -10,6 +11,7 @@ import commands.TransferCommand;
 import commands.ShowLoginCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
+import commands.SaveCustomerCommand;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -46,6 +48,9 @@ public class FrontController extends HttpServlet {
         commands.put("transferMoney", new TransferCommand("account-list.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("back", new TargetCommand("main.jsp", Arrays.asList(SecurityRole.All)));
         commands.put("main", new TargetCommand("main.jsp", Arrays.asList(SecurityRole.All)));
+        
+        commands.put("add-customer", new AddCustomerCommand("add-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("save-customer", new SaveCustomerCommand("add-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     }
 
     public Command getCommand(String cmdStr, HttpServletRequest request) {

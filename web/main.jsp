@@ -40,6 +40,9 @@
         </c:choose>
     
     
+    <a class="mlink" href="Controller?command=list-customers">Customer List</a>
+    <a class="mlink" href="Controller?command=add-customer">Add/Edit Customer</a>
+                
     <div id="menubar">
         <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
             <a class="mlink" href="Controller?command=list-customers">Customer List</a>
