@@ -37,21 +37,8 @@
                         -Nahl Team </p><br><br><br><br>
 
                 </div>
-
-
-        <c:choose >
-            <c:when test="${pageContext.request.remoteUser== null}">
-                <a href="Redirect?command=showlogin">Login</a>
-            </c:when>
-            <c:otherwise>
-                <a href="Redirect?command=logout">Log out</a></li>
-            </c:otherwise>
-        </c:choose>
     
     
-    <a class="mlink" href="Controller?command=list-customers">Customer List</a>
-    <a class="mlink" href="Controller?command=add-customer">Add/Edit Customer</a>
-    <a class="mlink" href="Controller?command=add-account">Add Account</a>
                 
     <div id="menubar">
         <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
@@ -74,6 +61,7 @@
                     <a class="mlink" href="http://www.server.dk/fremmed.htm">Til en andens side</a>
                     <a class="mlink" href="Controller?command=list-customers">Customer List</a>
                     <a class="mlink" href="Controller?command=add-customer">Add/Edit Customer</a>
+                    <a class="mlink" href="Controller?command=add-account">Add Account</a>
 
                 </div><hr/>
                 <div id="footer">Copyright © NAHL GROUP</div>
