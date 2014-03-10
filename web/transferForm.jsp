@@ -61,7 +61,7 @@
                     <div>
                         <label class='ndLabel' for='title'>F. account</label>
                         <select name="fromAccount" id='fromAccount'>
-                            <c:forEach var="account" items="${summary}">
+                            <c:forEach var="account" items="${ownAccount}">
                                 <option name="fromAccount"value=${account.number} selected="selected">${account.number}</option>
                             </c:forEach>
 

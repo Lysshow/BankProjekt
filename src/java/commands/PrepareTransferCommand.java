@@ -2,6 +2,7 @@ package commands;
 
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountSummary;
+import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import servlets.Factory;
 import java.util.Collection;
 import java.util.List;
@@ -19,8 +20,11 @@ public class PrepareTransferCommand extends TargetCommand{
         BankManager manager = Factory.getInstance().getManager();
         
         Collection<AccountSummary> summary = manager.listAccounts();
+        
+        CustomerIdentifier customer = CustomerIdentifier.fromString(request.getParameter("cpr"));
+        Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
 
-        request.setAttribute("message", "Lort");
+        request.setAttribute("ownAccount", accounts);
         request.setAttribute("summary", summary);
         
         return super.execute(request);

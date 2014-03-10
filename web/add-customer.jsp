@@ -37,7 +37,7 @@
                         <div><label for="email">Email</label><input type="email" name="email" id="email"/></div>
                         <div><label for="phone">Phone Nr.</label><input type="phone" name="phone" id="phone"/></div>
                         <div><label for="street">Street</label><input type="street" name="street" id="street"/></div>
-                        <div><label for="postalcode">Postal code</label><input type="text" name="postalcode" id="postalcode"/></div>
+                        <div><label for="postalcode">Postal code</label><input type="text" name="postalCode" id="postalCode"/></div>
                         <div><label for="postalDistrict">Postal district</label><input type="postalDistrict" name="postalDistrict" id="postalDistrict"/></div>
                         <div><label for="title">Title</label><input type="title" name="title" id="title"/></div>
                     </div>
