@@ -43,13 +43,6 @@ Values: TRUE or FALSE</description>
         <exception-type>java.lang.SecurityExeption</exception-type>
         <location>/errorPages/notRequiredRightsPage.jsp</location>
     </error-page>
-    <login-config>
-        <auth-method>FORM</auth-method>
-        <form-login-config>
-            <form-login-page>/login/login.jsp</form-login-page>
-            <form-error-page>/login/login.jsp</form-error-page>
-        </form-login-config>
-    </login-config>
     <security-role>
         <description>Can see all details relating to him/he-self</description>
         <role-name>Customer</role-name>

@@ -53,10 +53,10 @@
                     </tr>
               
 
-
+            </table>
             </c:forEach>
         
-          </table>
+         
         </div>
         
         <div id="menubar">   
