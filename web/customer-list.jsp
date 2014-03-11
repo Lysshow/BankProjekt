@@ -34,6 +34,7 @@
                         <th>PhoneNo: </th>
                         <th>Email: </th>
                         <th>Accounts:</th>
+                        <th>Edit:</th>
                     </tr>
                     <tr>
                         <td> ${customer.cpr}</td>
@@ -45,6 +46,13 @@
                         <td><form action="Controller?command=list-accounts&cpr=${customer.cpr}"
                                   method="post">
                                 <input type="submit" name="listaccounts" id="listaccounts" value="List Accounts" />
+                            </form>
+
+                        </td>
+                        
+                        <td><form action="Controller?command=edit-customer&cpr=${customer.cpr}"
+                                  method="post">
+                                <input type="submit" name="edit-customer" id="edit-customer" value="Edit Customer" />
                             </form>
 
                         </td>

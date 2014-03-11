@@ -23,8 +23,10 @@ public class PrepareTransferCommand extends TargetCommand{
         
         CustomerIdentifier customer = CustomerIdentifier.fromString(request.getParameter("cpr"));
         Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
-
+        String account = request.getParameter("selectedAccount");
+        
         request.setAttribute("ownAccount", accounts);
+        request.setAttribute("selected", account);
         request.setAttribute("summary", summary);
         
         return super.execute(request);

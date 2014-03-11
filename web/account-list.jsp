@@ -52,6 +52,7 @@
                         <td>  <form action="Controller?command=transfer"
                                     method="post">
                                 <input type="hidden" name="cpr" id="cpr" value="${customer.cpr}" />
+                                <input type="hidden" name="selectedAccount" id="selectedAccount" value="${account.number}" />
                                 <input type="submit" name="transfer" id="transferButton" value="Transfer money" />
                             </form>
 
