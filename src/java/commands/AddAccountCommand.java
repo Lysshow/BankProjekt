@@ -18,6 +18,11 @@ public class AddAccountCommand extends TargetCommand {
 
   @Override
   public String execute(HttpServletRequest request) {
+      
+  String cpr = request.getParameter("cpr");
+        
+  request.setAttribute("cpr", cpr);
+    
     return super.execute(request); //To change body of generated methods, choose Tools | Templates.
   }
   

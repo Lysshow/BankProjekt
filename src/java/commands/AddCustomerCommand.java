@@ -5,9 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;
 
-/**
- * @author Lars Mortensen
- */
+
 public class AddCustomerCommand extends TargetCommand {
 
   public AddCustomerCommand(String target, List<SecurityRole> roles) {

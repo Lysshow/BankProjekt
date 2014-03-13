@@ -30,7 +30,7 @@
             <Form action="Controller?command=save-account"
                   method="post">
                 <div>
-                    <div><label for="cpr">CPR</label><input type="text" name="cpr" id="cpr" required/></div>
+                    <div><label for="cpr">CPR</label><input type="text" name="cpr" id="cpr" value="${cpr}" required/></div>
                     <div><label for="interest">Interest</label><input type="text" name="interest" id="interest" required/></div>
                 </div>
                 <br/>
@@ -42,6 +42,7 @@
         <div id="menubar">   
             <p class="midt">
                 <a class="mlink" href="Controller?command=back">Back to main page</a>
+                <a class="mlink" href="Controller?command=list-accounts&cpr=${cpr}">Accounts</a>
                 <a class="mlink" href="Controller?command=list-customers">Customer List</a>
             </p></div>
 
