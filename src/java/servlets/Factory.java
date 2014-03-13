@@ -20,7 +20,7 @@ public class Factory {
   
   private Factory() {
     manager = new DummyBankManager();
-    //manager = lookupBankManagerBeanRemote();
+  //  manager = lookupBankManagerBeanRemote();
     }
   
   public static Factory getInstance() {

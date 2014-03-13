@@ -1,16 +1,20 @@
 
-package servlets;
+package commands;
 
-import commands.TargetCommand;
+
 import dk.cphbusiness.bank.contract.BankManager;
 import java.util.List;
-import javax.ejb.Stateless;
+
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;
+import servlets.Factory;
 
 
-@Stateless
+
 public class SayHelloCommand extends TargetCommand{
+
+    
+  
 
     public SayHelloCommand(String target, List<SecurityRole> roles) {
         super(target, roles);
