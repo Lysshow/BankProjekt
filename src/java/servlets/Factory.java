@@ -5,22 +5,20 @@ import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.dummy.bank.control.DummyBankManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.EJB;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 
 public class Factory {
-   // BankManager bankManagerBean = lookupBankManagerBeanRemote();
-  
-  
-  
+  @EJB
   private static final Factory instance = new Factory();
-  private BankManager manager;
+  private final BankManager manager;
   
   private Factory() {
-    manager = new DummyBankManager();
-  //  manager = lookupBankManagerBeanRemote();
+    //manager = new DummyBankManager();
+    manager = lookupBankManagerBeanRemote();
     }
   
   public static Factory getInstance() {
@@ -34,17 +32,15 @@ public class Factory {
   
   public BankManager getManager() {
     return manager;
-    }
+    }  
 
     private BankManager lookupBankManagerBeanRemote() {
         try {
             Context c = new InitialContext();
             return (BankManager) c.lookup("java:global/Backend/BankManagerBean!dk.cphbusiness.bank.contract.BankManager");
-        }
-        catch (NamingException ne) {
+        } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
-  
   }

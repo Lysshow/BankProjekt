@@ -9,7 +9,51 @@
         <style>
             label {display: inline; width: 8em; text-align: left; float: left;}
             fieldset {width: 20em;padding: 1em;}
+
+            #myform label.error {
+                color:red; width:auto; font-size: small;
+                float : right; display: block;
+            }
+            #myform input.error {
+                border:1px solid red;
+            }
+            .container {width:45em;border: lightgray thin solid; padding: 1em; 
+                  margin-left: auto;margin-right: auto;margin-top: 2em;font-family: sans-serif;}
         </style>
+
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <!--    <script src="js/jquery.validate.js"></script>-->
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+        <script>
+            $(document).ready(function() {
+                // validate the comment form when it is submitted
+                $("#myform").validate({
+                    rules: {
+                        fname: {required: true, minlength: 2},
+                        lname: {required: true, minlength: 2},
+                        email: {required: true, email: true, remote: "EmailServlet"}
+                    },
+                    messages: {
+                        fname: {
+                            required: "Please enter you first name",
+                            minlength: jQuery.format("At least {0} characters required!")
+                        },
+                        lname: {
+                            required: "Please enter your lastname",
+                            minlength: jQuery.format("At least {0} characters required!")
+                        },
+                        email: {
+                            required: "Please enter a valid email",
+                            remote: "Already excist"
+                        }
+                    }
+                    //,
+                    //errorLabelContainer: "#errors", wrapper: "div"
+                });
+            });
+        </script>
+
+
     </head>
     <body>
         <div id="topbar">
@@ -30,15 +74,15 @@
             <p>This page should be visible for SuperEmployees only</p>
             <fieldset>
                 <legend>Customer Details</legend>
-                <Form>
+                <form id="myform">
                     <div>
-             
+
                         <c:if test="${customer== null}">
                             <div><label for="cpr">CPR</label><input type="text" name="cpr" id="cpr" value="${customer.cpr}" required/></div>
-                        </c:if>
-                        <c:if test="${customer!= null}">
+                            </c:if>
+                            <c:if test="${customer!= null}">
                             <div><label for="cpr">CPR</label><input type="text" name="cpr" id="cpr" value="${customer.cpr}" disabled required/></div>
-                        </c:if>
+                            </c:if>
                         <div><label for="fname">First Name</label><input type="text" name="fname" id="fname" value="${customer.firstName}"required/></div>
                         <div><label for="lname">Last Name</label><input type="text" name="lname" id="lname" value="${customer.lastName}"required/></div>
                         <div><label for="email">Email</label><input type="email" name="email" id="email" value="${customer.email}"/></div>
@@ -52,7 +96,7 @@
 
                     <br/>
                     <input type="submit" value="Save"/>
-                </Form>
+                </form>
             </fieldset>
             <br/>
         </div>

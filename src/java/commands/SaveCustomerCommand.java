@@ -18,7 +18,7 @@ public class SaveCustomerCommand extends TargetCommand {
   @Override
   public String execute(HttpServletRequest request) {
     String cpr = request.getParameter("cpr");
-    String title = "";
+    String title = "Awesome";
     String fname = request.getParameter("fname");
     String lname = request.getParameter("lname");
     String street = request.getParameter("street");

@@ -21,9 +21,9 @@ public class ListAccountsCommand extends TargetCommand {
 
    
     CustomerIdentifier customer = CustomerIdentifier.fromString(request.getParameter("cpr"));
-    Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
-
-
+    Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);    
+    
+    
     request.setAttribute("accounts", accounts);
     request.setAttribute("message", "This is a list of accounts");
     request.setAttribute("customer", customer);

@@ -16,11 +16,13 @@ import commands.LoginCommand;
 import commands.LogoutCommand;
 import commands.SaveAccountCommand;
 import commands.SaveCustomerCommand;
+import dk.cphbusiness.bank.contract.BankManager;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,7 +33,6 @@ import security.SecurityRole;
 
 @WebServlet(name = "FrontController", urlPatterns = {"/Controller"})
 public class FrontController extends HttpServlet {
-
     private final Map<String, Command> commands = new HashMap<>();
 
     public FrontController() {
@@ -58,7 +59,7 @@ public class FrontController extends HttpServlet {
         commands.put("edit-customer", new EditCustomerCommand("add-customer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         
         commands.put("add-account", new AddAccountCommand("add-account.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
-        commands.put("save-account", new SaveAccountCommand("add-account.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        commands.put("save-account", new SaveAccountCommand("account-list.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         
         commands.put("hello", new SayHelloCommand("hello.jsp", Arrays.asList(SecurityRole.All)));
     }

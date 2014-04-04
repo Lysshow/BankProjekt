@@ -41,6 +41,9 @@ public class SaveAccountCommand extends TargetCommand {
         } catch (CustomerBannedException ex) {
             Logger.getLogger(SaveAccountCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        request.setAttribute("cpr", cpr);
+        
      return super.execute(request); 
   }
     
