@@ -18,45 +18,54 @@
                 border:1px solid red;
             }
             .container {width:45em;border: lightgray thin solid; padding: 1em; 
-                  margin-left: auto;margin-right: auto;margin-top: 2em;font-family: sans-serif;}
-        </style>
+                        margin-left: auto;margin-right: auto;margin-top: 2em;font-family: sans-serif;}
+            </style>
 
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <!--    <script src="js/jquery.validate.js"></script>-->
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
-        <script>
-            $(document).ready(function() {
-                // validate the comment form when it is submitted
-                $("#myform").validate({
-                    rules: {
-                        fname: {required: true, minlength: 2},
-                        lname: {required: true, minlength: 2},
-                        email: {required: true, email: true, remote: "EmailServlet"}
-                    },
-                    messages: {
-                        fname: {
-                            required: "Please enter you first name",
-                            minlength: jQuery.format("At least {0} characters required!")
+            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+            <!--    <script src="js/jquery.validate.js"></script>-->
+            <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+            <script>
+                $(document).ready(function() {
+                    jQuery.validator.addMethod("lettersonly", function(value, element) {
+                        return this.optional(element) || /^[a-å]+$/i.test(value);
+                    }, "Letters only please");
+
+                    jQuery.validator.addMethod("numbersonly", function(value, element) {
+                        return this.optional(element) || /^[0-9]+$/i.test(value);
+                    }, "Numbers only please");
+                    // validate the comment form when it is submitted
+                    $("#myform").validate({
+                        rules: {
+                            fname: {required: true, minlength: 2, lettersonly: true},
+                            lname: {required: true, minlength: 2, lettersonly: true},
+                            email: {required: true, email: true, remote: "EmailServlet"}
                         },
-                        lname: {
-                            required: "Please enter your lastname",
-                            minlength: jQuery.format("At least {0} characters required!")
-                        },
-                        email: {
-                            required: "Please enter a valid email",
-                            remote: "Already excist"
+                        messages: {
+                            fname: {
+                                required: "Please enter you first name",
+                                minlength: jQuery.format("At least {0} characters required!"),
+                                
+                            },
+                            lname: {
+                                required: "Please enter your lastname",
+                                minlength: jQuery.format("At least {0} characters required!"),
+                                
+                            },
+                            email: {
+                                required: "Please enter a valid email",
+                                remote: "Already excist"
+                            }
                         }
-                    }
-                    //,
-                    //errorLabelContainer: "#errors", wrapper: "div"
+                        //,
+                        //errorLabelContainer: "#errors", wrapper: "div"
+                    });
                 });
-            });
-        </script>
+            </script>
 
 
-    </head>
-    <body>
-        <div id="topbar">
+        </head>
+        <body>
+            <div id="topbar">
             <div id="login">
                 <c:choose >
                     <c:when test="${pageContext.request.remoteUser== null}">

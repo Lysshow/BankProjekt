@@ -42,8 +42,8 @@
         <div id="menubar">   
             <p class="midt">
                 <a class="mlink" href="Controller?command=back">Back to main page</a>
-                <a class="mlink" href="Controller?command=list-accounts&cpr=${cpr}">Accounts</a>
-                <a class="mlink" href="Controller?command=list-customers">Customer List</a>
+                <a class="mlink" href="Controller?command=list-accounts&cpr=${cpr}">Account list</a>
+                <a class="mlink" href="Controller?command=list-customers">Customer list</a>
             </p></div>
 
         <hr/> 
