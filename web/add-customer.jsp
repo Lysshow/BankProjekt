@@ -53,7 +53,7 @@
                             },
                             email: {
                                 required: "Please enter a valid email",
-                                remote: "Already excist"
+                                remote: "Already exists"
                             }
                         }
                         //,

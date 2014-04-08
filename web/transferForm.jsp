@@ -86,6 +86,7 @@
                         <label for='date' class='ndLabel' >Date</label> <input name="date" id='date' type="text">
                     </div>
                     <div>
+                        <input type="hidden" name="cpr" id="cpr" value="${cpr}" />
                         <button type="submit" name="command" value="transferMoney" >Transfer</button>
                         <!--<input type="submit" name="btnok" value="Transfer">-->
 

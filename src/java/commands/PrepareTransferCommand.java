@@ -25,6 +25,8 @@ public class PrepareTransferCommand extends TargetCommand{
         Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
         String account = request.getParameter("selectedAccount");
         
+        
+        request.setAttribute("cpr", request.getParameter("cpr"));
         request.setAttribute("ownAccount", accounts);
         request.setAttribute("selected", account);
         request.setAttribute("summary", summary);

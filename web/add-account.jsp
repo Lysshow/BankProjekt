@@ -34,7 +34,7 @@
                     <div><label for="interest">Interest</label><input type="text" name="interest" id="interest" required/></div>
                 </div>
                 <br/>
-                <input type='submit'name="save-account" id="save-account" value='Save'/>
+                <input type='submit' name="save-account" id="save-account" value='Save'/>
             </Form>
 
         </div>
