@@ -8,9 +8,9 @@
         <link type="text/css" rel="stylesheet" href="default.css"/>
       
 
-            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+            <script src="js/jquery-1.9.1.js"></script>
             <!--    <script src="js/jquery.validate.js"></script>-->
-            <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+            <script src="js/validate.js"></script>
             <script>
                 $(document).ready(function() {
                     jQuery.validator.addMethod("lettersonly", function(value, element) {
@@ -25,7 +25,8 @@
                         rules: {
                             fname: {required: true, minlength: 2, lettersonly: true},
                             lname: {required: true, minlength: 2, lettersonly: true},
-                            email: {required: true, email: true, remote: "EmailServlet"}
+                            email: {required: true, email: true, remote: "EmailServlet"},
+                            phone: {required: true, phone: true, numbersonly: true, remote: "WannabeKrak"}
                         },
                         messages: {
                             fname: {
@@ -40,6 +41,9 @@
                             },
                             email: {
                                 required: "Please enter a valid email",
+                                remote: "Already exists"
+                            },
+                            phone: {
                                 remote: "Already exists"
                             }
                         }
@@ -89,9 +93,10 @@
 <!--                        <div><label for="title">Title</label><input type="title" name="title" id="title" value="${customer.title}"/></div>-->
                     </div>
                     <input type="hidden" name="command" value="save-customer">
-
+                    <input type="hidden" name="command" value="phone">
                     <br/>
                     <input type="submit" value="Save"/>
+                    <input type="submit" value="Hent"/>
                 </form>
             </fieldset>
             <br/>
