@@ -25,7 +25,7 @@ public class WannabeKrak extends HttpServlet {
         String restResource = "/service/person/";
         String mime = "application/json";
         String val = callRest(server, restResource, parameter, mime, "GET");
-        System.out.println("halløj------------------------------------------------------------"+phone);
+        
         
         try (PrintWriter out = response.getWriter()) {
             out.println(val);
