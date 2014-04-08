@@ -6,20 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add Customer</title>
         <link type="text/css" rel="stylesheet" href="default.css"/>
-        <style>
-            label {display: inline; width: 8em; text-align: left; float: left;}
-            fieldset {width: 20em;padding: 1em;}
-
-            #myform label.error {
-                color:red; width:auto; font-size: small;
-                float : right; display: block;
-            }
-            #myform input.error {
-                border:1px solid red;
-            }
-            .container {width:45em;border: lightgray thin solid; padding: 1em; 
-                        margin-left: auto;margin-right: auto;margin-top: 2em;font-family: sans-serif;}
-            </style>
+      
 
             <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
             <!--    <script src="js/jquery.validate.js"></script>-->
