@@ -19,19 +19,51 @@ public class WannabeKrak extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String phone = request.getParameter("phone");
+        PrintWriter out;
+        
         String server = "http://datdb.cphbusiness.dk:8080/KrakRemote";
-        String parameter = phone;
-        String restResource = "/service/person/";
-        String mime = "application/json";
-        String val = callRest(server, restResource, parameter, mime, "GET");
+       
+        String command = request.getParameter("command");
         
-        
-        try (PrintWriter out = response.getWriter()) {
-            out.println(val);
-        }
 
+        if (command.toLowerCase().contains("autofill")) {
+            String phone = request.getParameter("phone");
+            String parameter = phone;
+            String restResource = "/service/person/";
+            String mime = "application/json";
+            String val = callRest(server, restResource, parameter, mime, "GET");
+        try{ 
+            out = response.getWriter();
+            out.println(val);
+            }
+         catch(Exception e){
+           System.out.println("Problem"+e);
+       }}
+
+        else if (command.toLowerCase().contains("count")) {
+            String parameter = "";
+            String restResource = "/service/request/thisuser";
+            String mime = "text/plain";
+            String val = callRest(server, restResource, parameter, mime, "GET");
+        try{
+            out = response.getWriter(); 
+            out.println(val);
+            
+        }
+         catch(Exception e){
+           System.out.println("Problem");
+       }}
+        else {
+            //Not a valid response
+            out = response.getWriter();
+            out.println("\t\t Not a valid command or query!");
+        }
+       
+       
+        
     }
+
+  
 
     private static String callRest(String server, String restResource, String parameter, String mime, String method) {
         String data = "";
@@ -42,7 +74,7 @@ public class WannabeKrak extends HttpServlet {
             Authenticator.setDefault(new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("group-e", "test".toCharArray());//Add your team password here 
+                    return new PasswordAuthentication("group-eeeeee", "test".toCharArray());//Add your team password here 
                 }
             });
             conn.setRequestProperty("Accept", mime);

@@ -13,16 +13,17 @@
         <script src="js/jquery-1.9.1.js"></script>
         <script>
 
-            var xMLHttpRequest = new xMLHttpRequest();
             function getCount(){
             $.ajax({
-                    url: "http://datdb.cphbusiness.dk:8080/KrakRemote/service/request/thisuser",
-                    type: "GET",
-                    data: "group-e",
+                    url: "WannabeKrak",
                     cache: false,
+                    data: {
+                        command: "count"
+                    },
                     dataType: "text/plain"
+                    
             }).done(function(data) {
-            alert(data);
+            alert("woop"+data);
             });
             }
 

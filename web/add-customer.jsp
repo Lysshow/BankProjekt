@@ -55,8 +55,8 @@
                     url: "WannabeKrak",
                     cache: false,
                     data: {
-                        phone: $("#phone").val()
-
+                        phone: $("#phone").val(),
+                        command: "autofill"
                     },
                     dataType: "json"
                 }).done(function(data) {

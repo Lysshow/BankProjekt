@@ -50,6 +50,7 @@
         <a class="mlink" href="Controller?command=add-customer">Add Customer</a>
         <a class="mlink" href="Controller?command=add-account">Add Account</a>
         <a class="mlink" href="Controller?command=hello">Test Backend implementation</a>
+        <a class="mlink" href="Controller?command=updateButton">Count</a>
 
     </div>
     <hr/> 

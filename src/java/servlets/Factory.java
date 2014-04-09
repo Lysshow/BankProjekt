@@ -2,7 +2,7 @@ package servlets;
 
 import commands.Command;
 import dk.cphbusiness.bank.contract.BankManager;
-import dk.cphbusiness.dummy.bank.control.DummyBankManager;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
