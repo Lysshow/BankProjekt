@@ -21,11 +21,10 @@ public class WannabeKrak extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out;
         
-        String server = "http://datdb.cphbusiness.dk:8080/KrakRemote";
+        String server = "http://localhost:8080/WannabeKrak";
        
         String command = request.getParameter("command");
         
-
         if (command.toLowerCase().contains("autofill")) {
             String phone = request.getParameter("phone");
             String parameter = phone;
@@ -58,12 +57,9 @@ public class WannabeKrak extends HttpServlet {
             out = response.getWriter();
             out.println("\t\t Not a valid command or query!");
         }
-       
-       
-        
+      
     }
 
-  
 
     private static String callRest(String server, String restResource, String parameter, String mime, String method) {
         String data = "";
@@ -74,7 +70,7 @@ public class WannabeKrak extends HttpServlet {
             Authenticator.setDefault(new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("group-eeeeee", "test".toCharArray());//Add your team password here 
+                    return new PasswordAuthentication("group-e", "test".toCharArray());//Add your team password here 
                 }
             });
             conn.setRequestProperty("Accept", mime);

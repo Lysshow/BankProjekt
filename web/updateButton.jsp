@@ -14,6 +14,7 @@
         <script>
 
             function getCount(){
+                
             $.ajax({
                     url: "WannabeKrak",
                     cache: false,
@@ -23,7 +24,7 @@
                     dataType: "text/plain"
                     
             }).done(function(data) {
-            alert("woop"+data);
+            alert("woop");
             });
             }
 

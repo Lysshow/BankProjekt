@@ -61,6 +61,8 @@ public class FrontController extends HttpServlet {
         commands.put("add-account", new AddAccountCommand("add-account.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         commands.put("save-account", new SaveAccountCommand("account-list.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         
+        commands.put("updateButton", new SayHelloCommand("updateButton.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+        
         commands.put("hello", new SayHelloCommand("hello.jsp", Arrays.asList(SecurityRole.All)));
     }
 

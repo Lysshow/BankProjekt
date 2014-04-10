@@ -100,7 +100,7 @@
                             <div><label for="cpr">CPR</label><input type="text" name="cpr" id="cpr" value="${customer.cpr}" required/></div>
                             </c:if>
                             <c:if test="${customer!= null}">
-                            <div><label for="cpr">CPR</label><input type="text" name="cpr" id="cpr" value="${customer.cpr}" disabled required/></div>
+                            <div><label for="cpr">CPR</label><input type="text" name="cpr" id="cpr" value="${customer.cpr}" required/></div>
                             </c:if>
                         <div><label for="fname">First Name</label><input type="text" name="fname" id="fname" value="${customer.firstName}"required/></div>
                         <div><label for="lname">Last Name</label><input type="text" name="lname" id="lname" value="${customer.lastName}"required/></div>
@@ -117,8 +117,9 @@
                     <input type="submit" value="Save"/>
                     
                 </form>
+                <c:if test="${customer== null}">
                     <input type="submit" value="Hent" onclick="getResult()"/>
-                    
+                    </c:if>
             </fieldset>
             <br/>
         </div>
