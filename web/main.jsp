@@ -8,7 +8,7 @@
         <link type="text/css" rel="stylesheet" href="default.css"/>
     </head>
     <body>
-       
+
         <div id="topbar">
 
             <div id="login">
@@ -44,13 +44,18 @@
         <c:if test="${pageContext.request.isUserInRole('Employee') || pageContext.request.isUserInRole('SuperEmployee')}">
             <a class="mlink" href="Controller?command=list-customers">Employee List</a>
         </c:if>
-        <a class="mlink" href="ny_kategori/index.htm">Til anden kategori</a>
+
+        <c:if test="${pageContext.request.isUserInRole('Customer') || pageContext.request.isUserInRole('Employee') || pageContext.request.isUserInRole('SuperEmployee')}">
+            <a class="mlink" href="Controller?command=about">About</a>
+        </c:if>
+            <a class="mlink" href="Controller?command=about">About</a>
+        <!--<a class="mlink" href="ny_kategori/index.htm">Til anden kategori</a>
         <a class="mlink" href="http://www.server.dk/fremmed.htm">Til en andens side</a>
         <a class="mlink" href="Controller?command=list-customers">Customer List</a>
         <a class="mlink" href="Controller?command=add-customer">Add Customer</a>
         <a class="mlink" href="Controller?command=add-account">Add Account</a>
         <a class="mlink" href="Controller?command=hello">Test Backend implementation</a>
-        <a class="mlink" href="Controller?command=updateButton">Count</a>
+        <a class="mlink" href="Controller?command=updateButton">Count</a>-->
 
     </div>
     <hr/> 

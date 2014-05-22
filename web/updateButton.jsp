@@ -14,17 +14,16 @@
         <script>
 
             function getCount(){
-                
             $.ajax({
                     url: "WannabeKrak",
                     cache: false,
                     data: {
                         command: "count"
                     },
-                    dataType: "text/plain"
+                    dataType: "text"
                     
             }).done(function(data) {
-            alert("woop");
+            alert("woop"+data);
             });
             }
 

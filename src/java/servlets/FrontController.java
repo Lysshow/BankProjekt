@@ -1,5 +1,6 @@
 package servlets;
 
+import commands.AboutCommand;
 import commands.SayHelloCommand;
 import commands.AddAccountCommand;
 import commands.AddCustomerCommand;
@@ -64,6 +65,7 @@ public class FrontController extends HttpServlet {
         commands.put("updateButton", new SayHelloCommand("updateButton.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
         
         commands.put("hello", new SayHelloCommand("hello.jsp", Arrays.asList(SecurityRole.All)));
+        commands.put("about", new AboutCommand("about.jsp", Arrays.asList(SecurityRole.All)));
     }
 
     public Command getCommand(String cmdStr, HttpServletRequest request) {
