@@ -31,6 +31,7 @@ public class ListCustomersCommand extends TargetCommand{
     Collection<CustomerSummary> customers = manager.listCustomers();
    
     request.setAttribute("customers", customers);
+    
     request.setAttribute("message", "Number of customers available: ");
    
     

@@ -27,6 +27,7 @@ public class Redirect extends HttpServlet {
 
    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
+       //POLYMORPHISM
     String cmdStr = request.getParameter("command");
     cmdStr = cmdStr!=null ? cmdStr: "main";
     Command command = Factory.getInstance().getCommand(cmdStr, request);

@@ -13,12 +13,16 @@ public class AboutCommand extends TargetCommand {
     public AboutCommand(String target, List<SecurityRole> roles) {
         super(target, roles);
     }
-    
+
     @Override
     public String execute(HttpServletRequest request) {
         BankManager manager = Factory.getInstance().getManager();
         Collection<CustomerSummary> customers = manager.listCustomers();
+        int number = manager.getCustomerCount();
+        
         request.setAttribute("customers", customers);
+        request.setAttribute("number", number);
+        
         return super.execute(request); //To change body of generated methods, choose Tools | Templates.
     }
 

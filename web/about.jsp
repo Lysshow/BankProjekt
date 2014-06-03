@@ -21,8 +21,8 @@
                 </p>
                 
                 <div>Hello World this is the page about something important</div>
+                <div>Det er fucking løgn: ${number}</div>
 
-                
                 <p>
                     <c:if test="${pageContext.request.isUserInRole('Employee') || pageContext.request.isUserInRole('SuperEmployee')}">
                     <div>Number of customers available: </div>${customers.size()}<br><br>
@@ -34,6 +34,7 @@
         <div id="menubar">   
             <a class="mlink" href="Controller?command=back">Back to main page</a>
         </div>
+        
         <hr/>
         <div id="footer">Copyright © NAHL GROUP</div>
 
